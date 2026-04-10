@@ -19,32 +19,3 @@ A Python-based secure voting system that uses TLS (SSL) for encrypted communicat
 ## How to Run
 
 ### 1. Generate Certificate
-python generate_cert.py
-
-### 2. Start Server
-python server.py
-
-### 3. Run Client
-python client_gui.py
-
----
-
-## Working
-
-- Client connects to server using SSL  
-- User enters Client ID and selects a vote (A/B/C)  
-- Vote is sent as:  
-  clientID | vote | HMAC  
-- Server verifies HMAC before accepting vote  
-- Duplicate votes are rejected  
-- Vote count is updated  
-- Results are sent to all connected clients  
-- GUI displays live results  
-
----
-
-## Security Used
-
-- TLS (SSL) for encrypted communication  
-- HMAC (SHA-256) for message integrity  
-- Client ID tracking to prevent multiple votes  
